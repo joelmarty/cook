@@ -7,10 +7,12 @@ import java.util.*;
 
 import models.*;
 
+@With(Secure.class)
 public class Recipes extends Controller {
 
     public static void list() {
-        render();
+        String user = Security.connected();
+        render(user);
     }
 
     public static void show(Long id) {

@@ -7,6 +7,7 @@ import play.data.validation.*;
 import java.util.*;
 
 import models.*;
+import models.exceptions.*;
 
 public class Users extends Controller {
 
@@ -37,13 +38,10 @@ public class Users extends Controller {
         }
 
         User.Create(username, email, password);
+        // TODO connect and redirect to another page.
     }
 
-    public static void login(){
-        render();
-    }
-    public static void process_login(@Required String username, @Required String password){
-
+    public static void show_profile(){
     }
 
 }

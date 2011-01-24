@@ -4,8 +4,10 @@ import play.db.jpa.*;
 import play.Logger;
 
 import java.util.*;
+import java.lang.*;
 import javax.persistence.*;
 import java.security.*;
+import models.exceptions.*;
 
 @Entity
 public class User extends Model{
@@ -48,5 +50,25 @@ public class User extends Model{
      */
     public static boolean isEmailAvailable(String email){
         return User.count("email = ?", email) == 0;
+    }
+
+    /**
+     * Return an user if the login informations (name and password) matches,
+     * otherwise, throws a WrongCredentials exception.
+     */
+    public static User getUser(String name, String password) throws WrongCredentials{
+        // convert the password to md5
+        User user = null;
+        try {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            byte[] digest = md5.digest(password.getBytes("UTF-8"));
+            List<User> users = User.find("name = % and password = %", name, digest).fetch();
+            user = users.get(0);
+        } catch (IndexOutOfBoundsException e){
+            throw new WrongCredentials(); // if no user is returned, throw an exception
+        } catch (Exception e) {
+            Logger.error(e.getMessage());
+        }
+        return user;
     }
 }
