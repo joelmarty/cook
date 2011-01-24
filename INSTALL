@@ -1,0 +1,12 @@
+INSTALL
+#######
+
+1 - install postgresql (8.4)
+2 - create database 'cook':
+CREATE DATABASE 'cook';
+
+3 - create user cook:
+CREATE USER cook WITH ENCRYPTED PASSWORD 'cook';
+
+4 - grant privileges:
+GRANT ALL ON DATABASE cook to 'cook';

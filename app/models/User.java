@@ -10,6 +10,7 @@ import java.security.*;
 import models.exceptions.*;
 
 @Entity
+@Table(name="Users")
 public class User extends Model{
     public String name;
     public String email;
