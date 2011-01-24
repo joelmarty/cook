@@ -13,4 +13,9 @@ public class Application extends Controller {
         render();
     }
 
+    public static void show(Long id) {
+        Recipe rp = Recipe.findById(id);
+        render(rp);
+    }
+
 }

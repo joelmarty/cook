@@ -1,4 +1,6 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+#{list items:recipes, as:'recipe'}
+    #{show post:recipe, as:'short'/}
+#{/list}

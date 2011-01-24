@@ -1,7 +1,27 @@
 # you describe your data using the YAML notation here
 # and then load them using Fixtures.load("data.yml")
 
-# User(bob):
+ User(bob):
 #   email: bob@gmail.com
-#   password: secret
-#   fullname: Bob
+   password: secret
+   name: Bob
+
+Recipe(carbo):
+    date: 2010-12-11
+    title: pasta carbonara
+    author: bob
+    ingredients:
+        - ing1
+        - ing2
+        - ing3
+    description: a delicious pasta carbonara recipe
+    instructions: bake the pasta, add stuff and voila!
+
+Ingredient(ing1):
+    name: pasta
+
+Ingredient(ing2):
+    name: Crème fraîche
+
+Ingredient(ing3):
+    name: onion
