@@ -1,0 +1,32 @@
+#{extends 'main.html' /}
+#{set title:'Sign up' /}
+
+<h1>Create an account</h1>
+
+#{ifErrors}
+<p class="error">Please, double check the values you entered.</p>
+#{/ifErrors}
+
+#{form @Users.process_signup_form()}
+<div>
+    <label for="username">User name</label>
+    <input type="text" name="username" id="username" value="${flash.username}">
+    <span class="error">#{error 'username' /}</span>
+</div>
+<div>
+    <label for="email">email adress</label>
+    <input type="text" name="email" id="email" value="${flash.email}">
+    <span class="error">#{error 'email' /}</span>
+</div>
+<div>
+    <label for="password">password</label>
+    <input type="password" name="password" id="password" value="${flash.password}">
+    <span class="error">#{error 'password' /}</span>
+</div>
+<div>
+    <label for="password_confirmation">confirmation</label>
+    <input type="password" name="password_confirmation" id="password_confirmation" value="${flash.password_confirmation}">
+    <span class="error">#{error 'password_confirmaton' /}</span>
+</div>
+<input type="submit" value="Register &rarr;">
+#{/form}
