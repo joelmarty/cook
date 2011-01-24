@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.security.*;
 
 @Entity
+@Table(name="Users")
 public class User extends Model{
     public String name;
     public String email;
