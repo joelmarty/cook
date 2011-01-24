@@ -7,8 +7,13 @@ GET     /                                       Application.index
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
-GET     /signup/                                Users.display_signup_form
-POST    /signup/                                Users.process_signup_form
+
+# Application routes
+GET     /signup/                                Users.signup
+POST    /signup/                                Users.process_signup
+
+GET     /recipes/                               Recipes.list
+GET     /recipes/{id}                           Recipes.show
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

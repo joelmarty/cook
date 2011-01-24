@@ -7,7 +7,7 @@
 <p class="error">Please, double check the values you entered.</p>
 #{/ifErrors}
 
-#{form @Users.process_signup_form()}
+#{form @Users.process_signup()}
 <div>
     <label for="username">User name</label>
     <input type="text" name="username" id="username" value="${flash.username}">

@@ -2,31 +2,31 @@
 
 <div class="recipe ${_as == 'short' ? 'short' : 'full' }">
     <h2 class="recipe-title">
-        <a href="#">${_rp.title}</a>
+        <a href="#">${_recipe.title}</a>
     </h2>
     <div class="recipe-meta">
-        <span class="recipe-author">by ${_rp.author.name}</span>
-        <span class="recipe-date"> on ${_rp.date}</span>
+        <span class="recipe-author">by ${_recipe.author.name}</span>
+        <span class="recipe-date"> on ${_recipe.date}</span>
     </div>
     <div class="recipe-content">
         #{if _as == 'short'}
             <div class="short-desc">
-               ${_rp.description.substring(0,300)} 
+               ${_recipe.description.substring(0,300)} 
             </div>
         #{/if}
         #{if _as == 'full'}
             <div class="long-desc">
-                ${_rp.description}
+                ${_recipe.description}
             </div>
             <div class="recipe-ingredients">
                 <ul class="ingredient-list">
-                    #{list items:_rp.ingredients, as:'ing'}
+                    #{list items:_recipe.ingredients, as:'ing'}
                         <li class="ingredient">${ing.name}</li>  
                     #{/list}
                 </ul>
             </div>
             <div class="recipe-instructions">
-                ${_rp.instructions}
+                ${_recipe.instructions}
             </div>
         #{/if}
     </div>

@@ -35,4 +35,18 @@ public class User extends Model{
 
         return user;
     }
+
+    /**
+     * Return true if no user is registered with this username
+     */
+    public static boolean isNameAvailable(String name){
+        return User.count("name = ?", name) == 0;
+    }
+
+    /**
+     * Return true if no user with this email is already registred
+     */
+    public static boolean isEmailAvailable(String email){
+        return User.count("email = ?", email) == 0;
+    }
 }

@@ -1,0 +1,6 @@
+#{extends 'main.html' /}
+#{set title:'List of all recipes' /}
+
+#{list items:recipes, as:'recipe'}
+    #{show_recipe recipe:recipe, as:'short'/}
+#{/list}

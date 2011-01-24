@@ -7,9 +7,9 @@ import java.util.*;
 
 import models.*;
 
-public class Application extends Controller {
+public class Recipes extends Controller {
 
-    public static void index() {
+    public static void list() {
         render();
     }
 
