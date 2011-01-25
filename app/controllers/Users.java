@@ -37,7 +37,7 @@ public class Users extends Controller {
             signup();
         }
 
-        User.Create(username, email, password);
+        User.create(username, email, password);
         // TODO connect and redirect to another page.
     }
 
