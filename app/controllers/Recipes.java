@@ -7,12 +7,11 @@ import java.util.*;
 
 import models.*;
 
-@With(Secure.class)
 public class Recipes extends Controller {
 
-    public static void list() {
-        String user = Security.connected();
-        render(user);
+    public static void listMine(){
+        String username = Security.connected();
+        Application.listUserRecipes(username);
     }
 
     public static void show(Long id) {
@@ -28,21 +27,6 @@ public class Recipes extends Controller {
     }
 
     // FIXME add the parameters with the validation here
-    public static void process_create(){
-    }
-
-    public static void search_by_ingredients(List<Ingredient> ingredients, List<Ingredient> exclude){
-    }
-
-    public static void search_by_name(String name){
-    }
-
-    public static void search_by_user(String username){
-    }
-
-    public static void search_by_date(Date date){
-    }
-
-    public static void search_by_period(Period period){
+    public static void processCreate(){
     }
 }
