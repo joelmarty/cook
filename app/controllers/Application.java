@@ -15,7 +15,7 @@ import models.*;
 public class Application extends Controller {
 
     public static void list() {
-        render(Recipe.findAll());
+        renderTemplate("Recipes/list.html", Recipe.findAll());
     }
 
     /**
