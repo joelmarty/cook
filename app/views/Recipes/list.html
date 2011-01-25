@@ -1,8 +1,6 @@
 #{extends 'main.html' /}
 #{set title:'List of all recipes' /}
 
-Hi, ${user}, here is a list of recipes.
-
 #{list items:recipes, as:'recipe'}
     #{show_recipe recipe:recipe, as:'short'/}
 #{/list}

@@ -28,3 +28,15 @@ It's possible to have a look to users profiles, with an access to:
 * favorite recipes
 * provided recipes
 * comments by this user
+
+Controllers
+===========
+
+The controllers roles are the following:
+
+* `Application` is the main application controller. It is possible to do things
+  like searching the recipes or listing all the recipes for instance. All
+  actions *do not* need to be authenticated.
+* `Recipe` is the application to manage recipes (oooh!). You need to be
+  authenticated to use it.
+* `User` is the controller managing users.
