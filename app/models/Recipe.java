@@ -19,6 +19,7 @@ public class Recipe extends Model {
     @OneToMany
     public List<RecipeIngredient> ingredients;
 
+    @Lob
     public String description;
 
     @Lob

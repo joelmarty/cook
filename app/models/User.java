@@ -8,7 +8,6 @@ import java.lang.*;
 import javax.persistence.*;
 import java.security.*;
 import models.exceptions.*;
-import utils.*;
 
 @Entity
 @Table(name="Users")
@@ -63,7 +62,7 @@ public class User extends Model{
         User user = null;
         try {
             MessageDigest md5 = MessageDigest.getInstance("MD5");
-            byte[] digest = md5.digest(password.getBytes("UTF-8"));
+            String digest = Utils.getHexString(md5.digest(password.getBytes("UTF-8")));
             List<User> users = User.find("name = % and password = %", name, digest).fetch();
             user = users.get(0);
         } catch (IndexOutOfBoundsException e){
