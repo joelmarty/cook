@@ -14,7 +14,7 @@ import models.*;
  */
 public class Application extends Controller {
 
-    public static void list() {
+    public static void listRecipes() {
         render(Recipe.findAll());
     }
 
