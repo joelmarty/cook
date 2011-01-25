@@ -1,5 +1,8 @@
 * create a theme for the application
+* add quantity information for the ingredients
 * add some glue with the registration and login features
 * recipe crud
 * recipe search (per ingredient, period, user)
 * user search
+* user logout and deletion
+* email adress confirmation
