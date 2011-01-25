@@ -15,11 +15,11 @@ public class Recipes extends Controller {
     }
 
     public static void show(Long id) {
-        Recipe rp = Recipe.findById(id);
-        if (rp == null){
+        Recipe recipe = Recipe.findById(id);
+        if (recipe == null){
             notFound();
         }
-        render(rp);
+        render(recipe);
     }
 
     public static void create(){
