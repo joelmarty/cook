@@ -17,7 +17,7 @@ public class Recipe extends Model {
     public User author;
 
     @OneToMany
-    public List<Ingredient> ingredients;
+    public List<RecipeIngredient> ingredients;
 
     public String description;
 
