@@ -28,7 +28,8 @@ public class Application extends Controller {
         if (user == null){
             notFound(username);
         }
-        render(Recipe.find("byAuthor", user.id));
+        List<Recipe> recipes = Recipe.find("byAuthor", user).fetch();
+        renderTemplate("Recipes/list.html", recipes, user);
     }
 
     /**
@@ -56,4 +57,3 @@ public class Application extends Controller {
     public static void searchByPeriod(Period period){
     }
 }
-
