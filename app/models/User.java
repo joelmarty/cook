@@ -2,6 +2,7 @@ package models;
 
 import play.db.jpa.*;
 import play.Logger;
+import play.data.validation.*;
 
 import java.util.*;
 import java.lang.*;
@@ -12,8 +13,15 @@ import models.exceptions.*;
 @Entity
 @Table(name="Users")
 public class User extends Model{
+    
+    @Required
     public String name;
+
+    @Email
+    @Required
     public String email;
+
+    @Required
     public String password;
 
     /**

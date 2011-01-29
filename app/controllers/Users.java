@@ -16,10 +16,10 @@ public class Users extends Controller {
     }
 
     public static void process_signup(
-            @Required String username, 
-            @Required @MinSize(10) @Equals("password_confirmation") String password, 
-            @Required String password_confirmation, 
-            @Email String email){
+            String username, 
+            @MinSize(10) @Equals("password_confirmation") String password, 
+            String password_confirmation, 
+            String email){
 
         // Check that the user do not already exists.   
         if (!User.isNameAvailable(username)){
