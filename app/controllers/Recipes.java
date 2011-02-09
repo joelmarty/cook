@@ -47,19 +47,19 @@ public class Recipes extends Controller {
                     ing.save();
                     RecipeIngredient recipeIngredient = new RecipeIngredient();
                     recipeIngredient.ingredient = ing;
-                    recipeIngredient.quantity = quantities[i]
+                    recipeIngredient.quantity = quantities[i];
                     recipeIngredient.save();
                     recipe.ingredients.add(recipeIngredient);
                 } else {
                     // else, directly build and save the RecipeIngredient
                     RecipeIngredient recipeIngredient = new RecipeIngredient();
                     recipeIngredient.ingredient = foundIngredients.get(0);
-                    recipeIngredient.quantity = quantities[i]
+                    recipeIngredient.quantity = quantities[i];
                     recipeIngredient.save();
                     recipe.ingredients.add(recipeIngredient);
                 }
             } catch (Exception e) {
-                Logger.error(e);
+                Logger.error(e.getMessage());
                 redirect("errors/500.html");
             }
 
